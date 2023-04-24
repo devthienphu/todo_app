@@ -3,8 +3,8 @@ import React from "react";
 const DoneTask = ({ task }) => {
   return (
     <>
-      <div className="flex flex-row justify-between bg-white rounded-xl py-3 w-4/5 px-4 items-center">
-        <div className="flex flex-row gap-x-4">
+      <div className="flex flex-row justify-between bg-white rounded-xl py-3 md:w-4/5 px-4 items-center">
+        <div className="flex flex-row flex-wrap gap-x-2 md:gap-x-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
