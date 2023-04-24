@@ -1,11 +1,16 @@
+import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
 import logo from "../imgs/logo.svg";
 import { getUser } from "../api/userApi";
 
 const Header = ({ id }) => {
-  // const userList= useContext(AddContext);
+  
+  const active =()=>{
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.toggle('-translate-x-full');
+  }
+
   const [user, setUser] = useState({});
 
   useEffect(() => {
@@ -15,7 +20,10 @@ const Header = ({ id }) => {
   }, [id]);
   return (
     <>
-      <div className="h-screen w-72 gap-y-4 flex flex-col p-4 rounded-xl items-center border shadow shadow-xl">
+      {/* destop */}
+      <div className="fixed top-0 left-0 bg-gray-100 z-20 sidebar h-screen w-72 gap-y-4 flex flex-col p-4 rounded-xl items-center border shadow shadow-xl
+                    overflow-hidden transform -translate-x-full transition duration-200 ease-in-out md:relative md:translate-x-0
+      ">
         {/* logo */}
         <img src={logo} alt="logo" className="w-32 pt-4"></img>
 
@@ -64,6 +72,18 @@ const Header = ({ id }) => {
           <p className="">Logout</p>
         </Link>
       </div>
+
+       {/* moblie menu */}
+        
+       <div className="bg-white flex z-10 justify-between md:hidden fixed top-0 right-0 left-0 rounded-b-xl shadow shadow-lg">
+        <img src={logo} alt="logo" className="w-32 p-3"></img>
+
+         <button className="moblie-menu-btn p-4 focus:outline-none focus:bg-gray-50" onClick={()=>{active()}}>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
+            </svg>
+         </button>
+        </div>
     </>
   );
 };

@@ -63,14 +63,14 @@ const User = () => {
       <div className="flex flex-row">
         <Header id={id} />
 
-        <div className="w-screen bg-[#a18aff] pl-32 pt-16 rounded-xl">
-          <p className="font-bold text-4xl text-white">Focus your tasks</p>
+        <div className="w-screen bg-[#a18aff] md:pl-32 pt-16 rounded-xl">
+          <p className="font-bold text-4xl text-white text-center md:text-left">Focus your tasks</p>
 
           {loading ? <Loading /> : <></>}
 
           {/* task */}
-          <div className="relative pt-8">
-            <div className="flex flex-col gap-y-4 overflow-hidden overflow-y-auto max-h-[530px]">
+          <div className="relative pt-8 px-4 md:px-0">
+            <div className="flex flex-col gap-y-4  overflow-hidden overflow-y-auto md:max-h-[530px]">
               {tasks.map((task, key) => (
                 <div className="">
                   {task.completed === false ? (
@@ -85,7 +85,7 @@ const User = () => {
                 </div>
               ))}
             </div>
-            <p className="text-white font-semibold pt-4">
+            <p className="text-white font-semibold pt-4 pb-4">
               Done {count}/{tasks.length} tasks
             </p>
           </div>
