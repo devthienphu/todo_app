@@ -1,6 +1,5 @@
 # GEEK UP INTERNSHIP FRONTEND PRODUCT
 
-## Scripts
 
 Setup project
 
