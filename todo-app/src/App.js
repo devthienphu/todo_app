@@ -20,8 +20,8 @@ function App() {
   return (
     <AddContext.Provider value={users}>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/user/:id" element={<User />} />
+        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/" element={<User />} />
       </Routes>
     </AddContext.Provider>
   );

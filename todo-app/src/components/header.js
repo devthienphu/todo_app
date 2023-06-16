@@ -1,23 +1,15 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../imgs/logo.svg";
-import { getUser } from "../api/userApi";
 
-const Header = ({ id }) => {
+const Header = () => {
   
   const active =()=>{
     const sidebar = document.querySelector('.sidebar');
     sidebar.classList.toggle('-translate-x-full');
   }
 
-  const [user, setUser] = useState({});
-
-  useEffect(() => {
-    (async () => {
-      setUser(await getUser(id));
-    })();
-  }, [id]);
+ 
   return (
     <>
       {/* destop */}
@@ -25,7 +17,7 @@ const Header = ({ id }) => {
                     overflow-hidden transform -translate-x-full transition duration-200 ease-in-out md:relative md:translate-x-0
       ">
         {/* logo */}
-        <img src={logo} alt="logo" className="w-32 pt-4"></img>
+        {/* <img src={logo} alt="logo" className="w-32 pt-4"></img> */}
 
         {/* user */}
         <div className="flex flex-row gap-x-3 border-b-2 border-[#a18aff] pb-6 mb-2">
@@ -44,8 +36,8 @@ const Header = ({ id }) => {
             />
           </svg>
           <div className="flex flex-col">
-            <p className="font-semibold">{user.name}</p>
-            <p className="text-gray-600 italic">@{user.username}</p>
+            <p className="font-semibold">Phu</p>
+            <p className="text-gray-600 italic">Phu</p>
           </div>
         </div>
 
